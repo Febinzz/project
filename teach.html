@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="teach.css">
 </head>
-
 <body>
 
 <!-- ===== TOP BAR ===== -->
@@ -27,6 +26,7 @@
         <a onclick="showPage('students',this)"><i class="fas fa-users"></i><span class="sidebar-label"> Students</span></a>
         <a onclick="showPage('exams',this)"><i class="fas fa-file-alt"></i><span class="sidebar-label"> Exams</span></a>
         <a onclick="showPage('questionbank',this)"><i class="fas fa-book"></i><span class="sidebar-label"> Question Bank</span></a>
+         <a onclick="showPage('settings',this)"><i class="fas fa-cog"></i><span class="sidebar-label"> Settings</span></a>
         <a onclick="logout()" style="color:#ff6b6b;"><i class="fas fa-sign-out-alt"></i><span class="sidebar-label"> Logout</span></a>
     </div>
 </div>
@@ -66,6 +66,62 @@
 
    
 </div>
+<!-- SETTINGS SECTION -->
+<div id="settings" class="section">
+    <div class="section-title">Settings & Profile</div>
+    <div class="card">
+        <h3 style="color:#5a0f1b; margin-bottom:20px;">Edit Your Profile</h3>
+        <form>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin-bottom:20px;">
+                <div>
+                    <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Full Name</label>
+                    <input type="text" value="Dr.Kumar" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Teacher ID</label>
+                    <input type="text" value="" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                </div>
+                
+                <div>
+                    <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Email ID</label>
+                    <input type="email" value="" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Department</label>
+                    <input type="text" value=" Computer Science" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                </div>
+                <div>
+                    <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
+                </div>
+            </div>
+            <button type="button" onclick="saveSettings()" style="background:#5a0f1b; color:white; padding:10px 25px; border:none; border-radius:8px; cursor:pointer; font-weight:600;">Save Changes</button>
+        </form>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+        <h3 style="color:#5a0f1b; margin-bottom:20px;">Change Password</h3>
+        <form>
+            <div>
+                <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Current Password</label>
+                <input type="password" placeholder="Enter current password" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; margin-bottom:15px;">
+            </div>
+            <div>
+                <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">New Password</label>
+                <input type="password" placeholder="Enter new password" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; margin-bottom:15px;">
+            </div>
+            <div>
+                <label style="display:block; margin-bottom:5px; font-weight:600; color:#333;">Confirm Password</label>
+                <input type="password" placeholder="Confirm new password" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; margin-bottom:15px;">
+            </div>
+            <button type="button" onclick="changePassword()" style="background:#5a0f1b; color:white; padding:10px 25px; border:none; border-radius:8px; cursor:pointer; font-weight:600;">Update Password</button>
+        </form>
+    </div>
+</div>
+
+</div>
+</div>
+
 
 <!-- STUDENTS -->
 <div id="students" class="section">
@@ -612,7 +668,7 @@ function populateExamDropdown(){
 }
 
 function logout(){
-    window.location.href = "frontpage.html";
+    window.location.href = "admin portal.html";
 }
 
 // Welcome typing animation + Profile picture upload
